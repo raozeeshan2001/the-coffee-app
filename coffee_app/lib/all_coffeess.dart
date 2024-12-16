@@ -1,8 +1,10 @@
+import 'package:coffee_app/all_apis.dart';
 import 'package:coffee_app/coffee_cards.dart';
 import 'package:flutter/material.dart';
 
 class AllCoffeess extends StatelessWidget {
-  const AllCoffeess({super.key});
+  AllApis allApis = AllApis();
+  AllCoffeess({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,18 +40,31 @@ class AllCoffeess extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.brown[100],
-                  borderRadius: BorderRadius.circular(10)),
-              child: ListView.builder(
-                  itemCount: 4,
-                  itemBuilder: (context, index) {
-                    return CoffeeCards(
-                        imageurl:
-                            'https://plus.unsplash.com/premium_photo-1674327105074-46dd8319164b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                        title: 'Lattee');
-                  }),
-            ),
+                decoration: BoxDecoration(
+                    color: Colors.brown[100],
+                    borderRadius: BorderRadius.circular(10)),
+                child: FutureBuilder(
+                    future: allApis.getapi(),
+                    builder: (context, snapshot) {
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      } else {
+                        return ListView.builder(
+                            itemCount: snapshot.data!.length,
+                            itemBuilder: (context, index) {
+                              return CoffeeCards(
+                                imageurl:
+                                    snapshot.data![index].image.toString(),
+                                title: snapshot.data![index].title.toString(),
+                                description: snapshot.data![index].description
+                                    .toString(),
+                                ingrediant: snapshot.data![index].ingredients,
+                              );
+                            });
+                      }
+                    })),
           )
         ],
       ),
