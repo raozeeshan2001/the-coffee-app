@@ -1,9 +1,10 @@
 import 'dart:convert';
 
 import 'package:coffee_app/cofee_model.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class AllApis {
+class AllApis extends ChangeNotifier {
   List<CoffeeModel> postlist = [];
 
   Future<List<CoffeeModel>> getapi() async {
@@ -14,6 +15,7 @@ class AllApis {
       for (Map<String, dynamic> i in data) {
         postlist.add(CoffeeModel.fromJson(i));
       }
+      notifyListeners();
       return postlist;
     } else {
       return postlist;

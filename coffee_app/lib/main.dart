@@ -1,8 +1,13 @@
+import 'package:coffee_app/all_apis.dart';
 import 'package:coffee_app/all_coffeess.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => AllApis(),
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
