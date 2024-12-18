@@ -83,21 +83,58 @@ class CoffeeDetails extends StatelessWidget {
                                   horizontal: 10, vertical: 5),
                               child: SizedBox(
                                 height: 150,
-                                child: ListView.builder(
-                                    itemCount: ingrediant!.length,
-                                    itemBuilder: (context, index) {
-                                      return Padding(
-                                        padding:
-                                            EdgeInsets.symmetric(vertical: 2.0),
-                                        child: Text(
-                                          ingrediant![index],
-                                          style: TextStyle(
+                                child:
+                                    //  ListView.builder(
+                                    //     itemCount: ingrediant!.length,
+                                    //     itemBuilder: (context, index) {
+                                    //       return Padding(
+                                    //         padding:
+                                    //             EdgeInsets.symmetric(vertical: 2.0),
+                                    //         child: Text(
+                                    //           ingrediant![index],
+                                    //           style: TextStyle(
+                                    //               fontSize: 15,
+                                    //               fontWeight: FontWeight.normal,
+                                    //               color: Colors.grey[50]),
+                                    //         ),
+
+                                    //       );
+                                    //     }),
+                                    ListView.builder(
+                                  itemCount: ingrediant!.length,
+                                  itemBuilder: (context, index) {
+                                    return Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 2.0),
+                                          child: Text(
+                                            ingrediant![index],
+                                            style: TextStyle(
                                               fontSize: 15,
                                               fontWeight: FontWeight.normal,
-                                              color: Colors.grey[50]),
+                                              color: Colors.grey[50],
+                                            ),
+                                          ),
                                         ),
-                                      );
-                                    }),
+                                        if (index <
+                                            ingrediant!.length -
+                                                1) // Avoid divider after the last item
+                                          Divider(
+                                            color: Colors.grey[
+                                                300], // Adjust the color of the divider
+                                            thickness:
+                                                1, // Adjust the thickness of the divider
+                                            indent:
+                                                5, // Optional: Add some indentation
+                                            // Optional: Add some end indentation
+                                          ),
+                                      ],
+                                    );
+                                  },
+                                ),
                               ),
                             ),
                           ),
