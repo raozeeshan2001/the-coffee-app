@@ -24,6 +24,7 @@ class CoffeeCards extends StatelessWidget {
                 builder: (context) => CoffeeDetails(
                       description: description ?? 'no description available',
                       ingrediant: ingrediant ?? [],
+                      image: imageurl ?? 'no image found',
                     )));
         print('clicked');
       },

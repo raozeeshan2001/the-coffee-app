@@ -23,17 +23,12 @@ class AllCoffeess extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  'Coffee',
-                  style: TextStyle(fontSize: 25),
+                  'Coffee Details',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   width: 5,
                 ),
-                Text(
-                  'Categories',
-                  style: TextStyle(
-                      fontSize: 25, color: Colors.deepOrangeAccent[400]),
-                )
               ],
             ),
           ),

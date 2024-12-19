@@ -6,15 +6,26 @@ import 'package:flutter/material.dart';
 class CoffeeDetails extends StatelessWidget {
   final String description;
   final List<String>? ingrediant;
+  final String image;
   CoffeeDetails(
-      {super.key, required this.description, required this.ingrediant});
+      {super.key,
+      required this.description,
+      required this.ingrediant,
+      required this.image});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
             appBar: AppBar(
-              title: Text('Coffee Details'),
+              centerTitle: true,
+              title: Text(
+                'Description',
+                style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+              ),
             ),
             body: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -24,13 +35,12 @@ class CoffeeDetails extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          'Description',
-                          style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black),
+                        CircleAvatar(
+                          //child: Image(image: NetworkImage(image)),
+                          backgroundImage: NetworkImage(image),
+                          radius: 50,
                         ),
+                        //
                         SizedBox(
                           height: 10,
                         ),

@@ -14,7 +14,7 @@ class Splash extends StatelessWidget {
       sp.initializeapp(context);
     });
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.deepOrange[300],
       body: Center(
         child: Lottie.asset(
           'assets/Animation.json', // Add your Lottie file in the assets folder
