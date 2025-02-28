@@ -1,5 +1,6 @@
 import 'package:coffee_app/all_apis.dart';
 import 'package:coffee_app/all_coffeess.dart';
+import 'package:coffee_app/intro_screen.dart';
 import 'package:coffee_app/splash.dart';
 import 'package:coffee_app/splash_provider.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Splash(),
+      //home: Splash(),
+      home: IntroScreen(),
     );
   }
 }
