@@ -14,22 +14,38 @@ class _TimelineScreenState extends State<TimelineScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[100],
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 50, vertical: 50),
         child: ListView(children: [
           Timelines(
               isfirst: true,
               islast: false,
-              endchild:
-                  Endchild(child: Center(child: Text('Meeting Schedule')))),
+              endchild: Endchild(
+                  child: Center(
+                      child: Text(
+                'Meeting Schedule',
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              )))),
           Timelines(
               isfirst: false,
               islast: false,
-              endchild: Endchild(child: Center(child: Text('Order Time')))),
+              endchild: Endchild(
+                  child: Center(
+                      child: Text('Order Time',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold))))),
           Timelines(
               isfirst: false,
               islast: true,
-              endchild: Endchild(child: Center(child: Text('Delivery Point')))),
+              endchild: Endchild(
+                  child: Center(
+                      child: Text('Delivery Point',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold))))),
         ]),
       ),
     );

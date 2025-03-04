@@ -42,7 +42,10 @@ class _IntroScreenState extends State<IntroScreen> {
                       onTap: () {
                         _controller.jumpToPage(2);
                       },
-                      child: Text('skip')),
+                      child: Text('skip',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold))),
 
                   SmoothPageIndicator(controller: _controller, count: 3),
                   //next
@@ -60,7 +63,10 @@ class _IntroScreenState extends State<IntroScreen> {
                               curve: Curves.easeIn);
                         }
                       },
-                      child: Text(currentindex == 2 ? 'done' : 'next')),
+                      child: Text(currentindex == 2 ? 'done' : 'next',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold))),
                 ]),
           )
         ],

@@ -21,11 +21,11 @@ class Timelines extends StatelessWidget {
       child: TimelineTile(
           isFirst: isfirst,
           isLast: islast,
-          beforeLineStyle: LineStyle(color: Colors.purple),
+          beforeLineStyle: LineStyle(color: Colors.blue),
           indicatorStyle: IndicatorStyle(
               width: 40,
               iconStyle: IconStyle(iconData: Icons.done, color: Colors.white),
-              color: Colors.purple),
+              color: Colors.blue),
           endChild: endchild),
     );
   }
